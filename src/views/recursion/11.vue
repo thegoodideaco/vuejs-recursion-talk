@@ -1,6 +1,7 @@
 <template>
   <div class="image-filler">
-    <img src="@/assets/images/gifs/r3.gif">
+    <img v-if="step < 6" src="@/assets/images/11.png">
+    <img class="vert" v-else src="@/assets/images/11-2.png">
   </div>
 </template>
 
@@ -34,10 +35,18 @@ export default Vue.extend({
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 30px;
 
   img {
-    min-width: 70%;
-    height: auto;
+    // min-width: 70%;
+    min-height: 100%;
+    width: auto;
+  }
+
+  .vert {
+    // max-height: 100%;
+    max-width: 100%;
+    width: auto;
   }
 }
 </style>

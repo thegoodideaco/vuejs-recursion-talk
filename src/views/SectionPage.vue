@@ -60,12 +60,13 @@ export default Vue.extend({
 
 .markdown {
   width: 40%;
+  padding-right: 100px;
   // overflow: hidden;
 }
 
 .section__page {
   height: 100%;
-  color: rgb(47, 255, 163);
+  color: darken(#fff, 2);
   background-color: rgb(50, 70, 90);
   display: flex;
 }

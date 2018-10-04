@@ -65,11 +65,13 @@ h6 {
 //   margin: 1em 0 15px;
 margin-bottom: 10px;
   padding: 0;
+
 }
 
 h1 {
   font-size: 2.5em;
 //   border-bottom: 1px solid #ddd;
+color: #05ffff;
 }
 
 h2 {
@@ -83,19 +85,23 @@ h2 {
 
 h3 {
   font-size: 1.5em;
+  color: #f2a6ff;
 }
 
 h4 {
   font-size: 1.2em;
+  color: #05ffff;
 }
 
 h5 {
   font-size: 1em;
+  color: #05ffff;
 }
 
 h6 {
   color: #777;
   font-size: 1em;
+  color: #05ffff;
 }
 
 p,
@@ -211,7 +217,7 @@ blockquote {
 //   border-left: 4px solid #DDD;
   padding: 0 15px;
   padding-left: 0;
-  color: #fff;
+  color: #05ff5f;
   margin-bottom: 25px;
   font-size: 1rem;
 

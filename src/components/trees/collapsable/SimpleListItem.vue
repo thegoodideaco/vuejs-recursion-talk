@@ -30,17 +30,15 @@ export default Vue.extend({
   // !Required for recursion
   name: 'SimpleListItem',
 
-  // ? Added expanded var
+  // !Added expanded var
   data() {
-    return {
-      expanded: false
-    }
+    return { expanded: false }
   },
 
-  // ? The root node for this entry
+  // ?The root node for this entry
   props: ['nodeData'],
 
-  // ? Child nodes of root node
+  // ?Child nodes of root node
   computed: {
     nodes(): object[] | undefined {
       return this.nodeData.children

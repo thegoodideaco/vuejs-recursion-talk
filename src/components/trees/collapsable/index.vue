@@ -2,9 +2,7 @@
   <ul>
     <simple-list-item v-for="(node, index) in nodes"
                       :key="index"
-                      :node-data="node">
-
-    </simple-list-item>
+                      :node-data="node" />
   </ul>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="image-filler">
-    <img src="@/assets/images/gifs/r1.gif">
+    <img src="@/assets/images/gifs/whoa.gif">
   </div>
 </template>
 
