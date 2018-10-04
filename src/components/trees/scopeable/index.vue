@@ -2,7 +2,16 @@
   <ul>
     <simple-list-item v-for="(node, index) in nodes"
                       :key="index"
-                      :node-data="node" />
+                      :node-data="node">
+
+                     <template slot-scope="subNode">
+                        <!-- The wrapper slot -->
+                      <slot v-bind="subNode">
+                        Replace Me!
+                      </slot>
+                     </template>
+
+    </simple-list-item>
   </ul>
 </template>
 

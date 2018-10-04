@@ -223,9 +223,77 @@ export default new Router({
           ]
         },
         {
-          path: '14/:step',
+          path: '14',
+          props: {
+            section: '14'
+          },
+          component: () => import('@/views/SectionPage.vue'),
+          redirect: '/section/14/1',
+          children: [
+            {
+              path: ':step',
+              props: true,
+              component: () =>
+                import('@/views/recursion/14.vue')
+            }
+          ]
+        },
+        {
+          path: '15',
+          props: {
+            section: '15'
+          },
+          component: () => import('@/views/SectionPage.vue'),
+          redirect: '/section/15/1',
+          children: [
+            {
+              path: ':step',
+              props: true,
+              component: () =>
+                import('@/views/recursion/15.vue')
+            }
+          ]
+        },
+        {
+          path: '16',
+          props: {
+            section: '16'
+          },
+          component: () => import('@/views/SectionPage.vue'),
+          redirect: '/section/16/1',
+          children: [
+            {
+              path: ':step',
+              props: true,
+              component: () =>
+                import('@/views/recursion/16.vue')
+            }
+          ]
+        },
+        {
+          path: '17',
+          props: {
+            section: '17'
+          },
+          component: () => import('@/views/SectionPage.vue'),
+          redirect: '/section/17/1',
+          children: [
+            {
+              path: ':step',
+              props: true,
+              component: () =>
+                import('@/views/recursion/17.vue')
+            }
+          ]
+        },
+        {
+          path: '18/:step',
           redirect: '/end',
           name: 'end'
+        },
+        {
+          path: '/cool',
+          component: () => import('@/views/TestPage.vue')
         }
       ]
     },
