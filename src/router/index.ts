@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/views/Home.vue'
 
 Vue.use(Router)
 
@@ -28,7 +27,7 @@ export default new Router({
             {
               path: ':step',
               props: true,
-              component: () => import('@/views/sections/FirstSection.vue')
+              component: () => import('@/views/recursion/1.vue')
             }
           ]
         },
@@ -43,7 +42,7 @@ export default new Router({
             {
               path: ':step',
               props: true,
-              component: () => import('@/views/sections/SecondSection.vue')
+              component: () => import('@/views/recursion/2.vue')
             }
           ]
         },
@@ -58,7 +57,7 @@ export default new Router({
             {
               path: ':step',
               props: true,
-              component: () => import('@/views/sections/SecondSection.vue')
+              component: () => import('@/views/recursion/3.vue')
             }
           ]
         },
@@ -73,7 +72,7 @@ export default new Router({
             {
               path: ':step',
               props: true,
-              component: () => import('@/views/sections/AddingSlots.vue')
+              component: () => import('@/views/recursion/4.vue')
             }
           ]
         },
@@ -89,7 +88,7 @@ export default new Router({
               path: ':step',
               props: true,
               component: () =>
-                import('@/views/sections/MultipleSlotSection.vue')
+                import('@/views/recursion/5.vue')
             }
           ]
         },
@@ -105,7 +104,7 @@ export default new Router({
               path: ':step',
               props: true,
               component: () =>
-                import('@/views/sections/PanelComponentSection.vue')
+                import('@/views/recursion/6.vue')
             }
           ]
         },
@@ -123,7 +122,7 @@ export default new Router({
               path: ':step',
               props: true,
               component: () =>
-                import('@/views/sections/PanelComponentSection.vue')
+                import('@/views/recursion/7.vue')
             }
           ]
         },
@@ -139,7 +138,7 @@ export default new Router({
               path: ':step',
               props: true,
               component: () =>
-                import('@/views/sections/ScopedSlotsSection.vue')
+                import('@/views/recursion/8.vue')
             }
           ]
         },
@@ -155,7 +154,7 @@ export default new Router({
               path: ':step',
               props: true,
               component: () =>
-                import('@/views/sections/ScopedSlotsSection.vue')
+                import('@/views/recursion/9.vue')
             }
           ]
         },
@@ -171,12 +170,60 @@ export default new Router({
               path: ':step',
               props: true,
               component: () =>
-                import('@/views/sections/ScopedSlotsSection.vue')
+                import('@/views/recursion/10.vue')
             }
           ]
         },
         {
-          path: '11/:step',
+          path: '11',
+          props: {
+            section: '11'
+          },
+          component: () => import('@/views/SectionPage.vue'),
+          redirect: '/section/11/1',
+          children: [
+            {
+              path: ':step',
+              props: true,
+              component: () =>
+                import('@/views/recursion/11.vue')
+            }
+          ]
+        },
+        {
+          path: '12',
+          props: {
+            section: '12'
+          },
+          component: () => import('@/views/SectionPage.vue'),
+          redirect: '/section/12/1',
+          children: [
+            {
+              path: ':step',
+              props: true,
+              component: () =>
+                import('@/views/recursion/12.vue')
+            }
+          ]
+        },
+        {
+          path: '13',
+          props: {
+            section: '13'
+          },
+          component: () => import('@/views/SectionPage.vue'),
+          redirect: '/section/13/1',
+          children: [
+            {
+              path: ':step',
+              props: true,
+              component: () =>
+                import('@/views/recursion/13.vue')
+            }
+          ]
+        },
+        {
+          path: '14/:step',
           redirect: '/end',
           name: 'end'
         }

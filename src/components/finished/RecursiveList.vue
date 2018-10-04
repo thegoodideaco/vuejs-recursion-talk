@@ -1,18 +1,42 @@
 <template>
   <ul class="recursive-list">
-    <li v-for="(item, index) in filteredItems"
-        :key="index">
-      <slot>
-        Hello There
-      </slot>
-    </li>
+    <recursive-list-item v-for="(item, index) in filteredItems"
+                         :key="index"
+                         :item="item">
+
+      <!-- We must bind the item, and this VNode -->
+      <div class="node__content">
+        <slot v-bind="{item, vnode: $vnode}">
+          {{item.name}}
+        </slot>
+      </div>
+
+      <recursive-list-node v-if="hasChildren"
+          v-show="!collapsed"
+          :item="item">
+
+        <!-- Template must be present -->
+        <template slot-scope="{item, vnode}">
+          <slot v-bind="{item, vnode}">
+            {{item.name}}
+          </slot>
+        </template>
+      </recursive-list-node>
+
+
+    </recursive-list-item>
   </ul>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import * as _ from 'lodash'
+import RecursiveListItem from './RecursiveListItem.vue'
+import RecursiveListNode from './RecursiveListNode.vue'
 export default Vue.extend({
+  name: 'RecursiveList',
+
+
   props: {
 
     // node represents the raw data of this item
@@ -33,13 +57,38 @@ export default Vue.extend({
     }
   },
 
+  data(): any {
+    return {
+
+      // This will toggle to show the subchildren
+      collapsed: true
+    }
+  },
+
+  components: {
+    RecursiveListItem,
+    RecursiveListNode
+  },
+
   computed: {
-    childNodes(): object[] | null {
+    // rename, this is conflicting
+    subNodes(): object[] | null {
+
+      if (!this.node) return null
+
       if (typeof this.childrenKey === 'string') {
         return this.node[this.childrenKey]
       } else {
         return this.childrenKey.call(this, this.node)
       }
+    },
+
+    filteredItems(): object[] | null {
+      return this.subNodes
+    },
+
+    hasChildren(): boolean {
+      return !!this.subNodes
     }
   }
 })

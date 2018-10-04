@@ -75,7 +75,9 @@ export default Vue.extend({
 .markdown {
   user-select: none;
   padding: 15px;
-  display: inline-table;
+  display: inline-block;
+  overflow-y: auto;
+  overflow-x: hidden;
   height: 100%;
   
   // overflow-y: auto;

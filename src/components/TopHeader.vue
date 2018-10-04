@@ -2,7 +2,7 @@
   <header class="header">
     <img src="@/assets/logo.svg" @click="$router.push('/')">
     <div>
-      Vue.js Slots // Lightning Talk with Jon Snyder
+      Vue.js Recursion Talk with Jon Snyder
     </div>
 
     <progress-bar></progress-bar>

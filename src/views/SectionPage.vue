@@ -19,8 +19,6 @@ import marked from 'marked'
 import BasicSlotExample from '@/components/BasicSlotExample.vue'
 import MarkdownDisplay from '@/components/MarkdownDisplay.vue'
 import Vue from 'vue'
-// import output from '@/'
-// tslint:disable-next-line:no-var-requires
 
 
 
@@ -37,12 +35,6 @@ export default Vue.extend({
       step: 0
     }
   },
-  // mounted() {
-  //   this.$store.commit('reset')
-  //   this.$http('/markdown/sections/1/1.md').then((res) => {
-  //     this.test = marked.parse(res.data)
-  //   })
-  // },
   watch: {
     '$store.state.section': {
       handler(val: number) {
@@ -65,14 +57,6 @@ export default Vue.extend({
 //   flex-flow: column nowrap;
 //   justify-content: stretch;
 // }
-
-.fill {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  align-content: stretch;
-  justify-content: center;
-}
 
 .markdown {
   width: 40%;

@@ -1,22 +1,7 @@
 <template>
   <div class="panel-component-section">
-    <div v-if="section===6">
-      <simple-panel />
-    </div>
-
-    <div v-else>
-      <simple-panel>
-        <img v-if="step > 4" src="@/assets/images//gifs/buttonclick.gif">
-
-        <div v-if="step > 5"
-             slot="footer">
-          <simple-button>Using</simple-button>
-          <simple-button>Slots</simple-button>
-          <simple-button>Is Really</simple-button>
-          <simple-button>Fun!</simple-button>
-        </div>
-      </simple-panel>
-    </div>
+    <img v-if="step < 6" src="@/assets/images/6-2.png">
+    <img v-else src="@/assets/images/6-2-1.png">
   </div>
 </template>
 
